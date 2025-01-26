@@ -1,0 +1,166 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: skyblue;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  margin: 2em 0;
+}
+
+.search-container input {
+  width: 50%;
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.search-container button {
+  padding: 0.5em 1em;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 8px;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+  padding: 1em;
+}
+
+.movie {
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.movie img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie .info {
+  padding: 1em;
+  text-align: left;
+}
+
+.movie .info h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.movie .info p {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0.5em 0;
+}
+
+.pagination {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.pagination button {
+  margin: 0 0.2em;
+  padding: 0.5em 1em;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.spinner {
+  display: none;
+  margin: 2em auto;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007BFF;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container input {
+    width: 80%;
+  }
+
+  .movies {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .movie img {
+    height: 200px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-container input {
+    width: 90%;
+    margin-bottom: 8px;
+  }
+
+  .search-container button {
+    width: auto;
+  }
+
+  .movie .info h3 {
+    font-size: 1em;
+  }
+
+  .movie .info p {
+    font-size: 0.8em;
+  }
+}
